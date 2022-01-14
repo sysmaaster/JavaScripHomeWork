@@ -1,5 +1,4 @@
 
-var val = 'd';
 if (val == 'a' ) {
     console.log( 'a' );
 }else if (val == 'b' ) {
