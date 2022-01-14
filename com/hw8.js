@@ -6,4 +6,4 @@ while (i < arr.length ){
         if(arr[i] >=3)
      {sum = sum + arr[i]}
     i++
-}
+} 

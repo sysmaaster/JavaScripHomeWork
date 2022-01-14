@@ -5,4 +5,4 @@ while (i < arr.length ){
     if (arr[i] % 2 == 0)
      {sum = sum + arr[i]}
     i++
-}
+} 
