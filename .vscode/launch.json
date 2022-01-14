@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\com\\hw9.js"
+            "program": "${workspaceFolder}\\com\\hw.js"
         }
     ]
 }
