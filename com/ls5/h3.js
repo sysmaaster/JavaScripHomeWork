@@ -26,3 +26,33 @@ value: 3
 }
 ```
 */
+
+
+function mix(...functions) {
+    var state = { value: null, errors: [] }
+    functions.forEach((f, idx) => {
+      try {
+        state.value = f(state.value)
+      } catch ({ name, message, stack }) {
+        state.errors.push({ name, message, stack, errorOnIteration: idx + 1 })
+      }
+    })
+    return state
+  }
+  
+  const res = mix(
+    () => {
+      return 0
+    },
+    (prev) => {
+      return prev + 1
+    },
+    (prev) => {
+      throw new RangeError('Range is wrong')
+    },
+    (prev) => {
+      return prev * 3
+    }
+  )
+  
+  console.log(JSON.stringify(res))

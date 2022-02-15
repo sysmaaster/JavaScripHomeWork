@@ -13,3 +13,24 @@ return str + 'c';
 return str + 'b';
 })('a'); // 'abc'
 ```*/
+
+
+
+function compose(...functions) {
+    return functions.reduce((f, g) => {
+      return function (arg) {
+        return f(g(arg))
+      }
+    })
+  }
+  
+  let a = compose(
+    (str) => {
+      return str + 'c'
+    },
+    (str) => {
+      return str + 'b'
+    }
+  )('a') // 'abc'
+  
+  console.log(a)

@@ -15,3 +15,23 @@ return prev * 2;
 }) // 2
 ```*/
 
+
+function mix(...functions) {
+    var state = null
+    functions.forEach((f) => (state = f(state)))
+    return state
+  }
+  
+  const res = mix(
+    () => {
+      return 0
+    },
+    (prev) => {
+      return prev + 1
+    },
+    (prev) => {
+      return prev * 2
+    }
+  ) // 2
+  
+  console.log(res)
